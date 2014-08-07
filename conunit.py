@@ -21,4 +21,4 @@ def convlen(length):
                 val=float(s[0])*mc.um
     return val
     
-length=convlen('2um')
+#length=convlen('2um')
