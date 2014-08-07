@@ -1,0 +1,19 @@
+mdc air
+1000nm
+1.0 1.0 1.0
+inf 1um inf
+
+mdc ml-lu
+1000nm
+1.0 1.5 2.5 1.5
+inf 2.5um 2.5um inf
+
+mdc sp-lu
+500nm
+1.46 (0.106,2.928) 1
+inf 50nm inf
+
+mdc vassallo
+860nm
+1.0 1.0 1.0
+inf 1um inf
