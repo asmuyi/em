@@ -23,5 +23,5 @@ def getarray(str_array):
     return s3
 
 #print getarray('2:2:8')
-            
+           
             
