@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 """ Change media name and specify the inc angle range and polarization"""
 media='sp-lu'
-tin=np.linspace(0,90,901)
+tin=np.linspace(30,60,301)
 t0=tin
 pol='TM'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -25,16 +25,16 @@ for ind in xrange(len(tin)):
     refl[ind]=tr3.getrefl(ri,tn,n,lam,tin[ind],pol)
     tran[ind]=tr3.gettran(ri,tn,n,lam,tin[ind],pol)
 x=t0
-ytm = refl;
+ytm = refl
 
 fig=plt.figure()
 plt.plot(x,ytm,'-*')
 plt.xlabel('angle',fontsize=12)
 plt.ylabel('refl',fontsize=12)
-plt.legend(['model (tmm)'],loc='upper left')
+plt.legend(['model (tmm)'],fontsize=8,loc='lower left')
 plt.ylim(0.0,1.0)
 plt.grid(color='r',linestyle='-.')
 plt.title('sp-lumerical')
 fig.set_size_inches(5,4)
-plt.savefig('plw.png',bbox_inches='tight',pad_inches=0.5,dpi=600)
+plt.savefig('example_plw.png',bbox_inches='tight',pad_inches=0.5,dpi=600)
 
