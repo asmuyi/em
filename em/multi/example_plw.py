@@ -36,4 +36,5 @@ plt.ylim(0.0,1.0)
 plt.grid(color='r',linestyle='-.')
 plt.title('sp-lumerical')
 fig.set_size_inches(5,4)
-plt.savefig('plw.png')
+plt.savefig('plw.png',bbox_inches='tight',pad_inches=0.5,dpi=600)
+

@@ -2,9 +2,7 @@
 """
 tmrefl.py, calculate the reflection coeff using tmm
 
-Created on Mon Jun  9 21:22:58 2014
-
-@author: Josh
+@author: asmuyi
 """
 
 import numpy as np
