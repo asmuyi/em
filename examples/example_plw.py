@@ -6,9 +6,9 @@ Example with sp-lu
 """
 
 import numpy as np
-import getmedia3 as gm3
-import myconst as mc
-import tmrefl3 as tr3
+import multi.getmedia3 as gm3
+import multi.myconst as mc
+import multi.tmrefl3 as tr3
 import matplotlib.pyplot as plt
 #from matplotlib.backends.backend_pdf import PdfPages
 
