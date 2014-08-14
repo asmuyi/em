@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jun 27 09:25:52 2014
-
 @author: asmuyi
 
 Expand mode based on mode profile
