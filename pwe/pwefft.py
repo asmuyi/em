@@ -29,7 +29,6 @@ def getifft(fx,x):
     s,dx,N=gets(x)
     fft_fx=getfft(fx,N)
     ifx=np.zeros(N,complex)
-    '''i do not understand the x-x[0] part'''
     x=x-x[0]
     for ind in np.arange(N):
         ifx[ind]=np.sum(fft_fx*np.exp(1j*s*x[ind]))
