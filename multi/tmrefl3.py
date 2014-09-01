@@ -7,7 +7,7 @@ tmrefl.py, calculate the reflection coeff using tmm
 
 import numpy as np
 import getneff3 as gn3
-import myconst as mc
+import tools.myconst as mc
 import getz03 as gz3
 
 

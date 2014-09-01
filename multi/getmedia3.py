@@ -8,9 +8,9 @@ Add transverse anisotropy on July 1 2014
 @author: asmuyi
 """
 import numpy as np
-import conunit as cu
+import tools.conunit as cu
 #import getuser as gu
-import genarray as ga
+import tools.genarray as ga
 
 
 def findmdc(media):

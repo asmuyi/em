@@ -6,10 +6,10 @@ Effective index calculation for bi-axial in z
 """
 
 import numpy as np
-import myconst as mc
+import tools.myconst as mc
 #import getuser as gu
 import getmedia3 as gm3
-from myconst import eps0,mu0,c0
+from tools.myconst import eps0,mu0,c0
 
 
 def getneff(ri,tn,n,lam,ia):

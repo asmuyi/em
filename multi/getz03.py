@@ -8,10 +8,10 @@ Updated on Jul 2014
 @author: asmuyi 
 """
 import numpy as np
-import myconst as mc
+import tools.myconst as mc
 import getneff3 as gn3
 import getmedia3 as gm3
-from myconst import eps0,mu0,c0
+from tools.myconst import eps0,mu0,c0
 
 def getncos(ri,pol,ia,rin):
     neff = rin * np.sin(ia/180.0*np.pi)
