@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Jun  9 20:25:42 2014
+""" Define constants globally"""
 
-@author: asmuyi 
-"""
 import numpy as np
 
 eps0=8.85e-12

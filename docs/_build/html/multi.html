@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>multi package &mdash; MyPyEm 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="MyPyEm 0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">MyPyEm 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="multi-package">
+<h1>multi package<a class="headerlink" href="#multi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-multi.getmedia3">
+<span id="multi-getmedia3-module"></span><h2>multi.getmedia3 module<a class="headerlink" href="#module-multi.getmedia3" title="Permalink to this headline">¶</a></h2>
+<p>getmedia3.py, obtain the media n and d from stack.dat
+Created on Mon Jun  9 21:34:41 2014
+Revised on Sat Jun 14 2014
+Add transverse anisotropy on July 1 2014</p>
+<p>&#64;author: asmuyi</p>
+<dl class="function">
+<dt id="multi.getmedia3.findmdc">
+<tt class="descclassname">multi.getmedia3.</tt><tt class="descname">findmdc</tt><big>(</big><em>media</em><big>)</big><a class="headerlink" href="#multi.getmedia3.findmdc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="multi.getmedia3.getd">
+<tt class="descclassname">multi.getmedia3.</tt><tt class="descname">getd</tt><big>(</big><em>tn_str</em>, <em>lam_str</em><big>)</big><a class="headerlink" href="#multi.getmedia3.getd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="multi.getmedia3.getmedia">
+<tt class="descclassname">multi.getmedia3.</tt><tt class="descname">getmedia</tt><big>(</big><em>media</em><big>)</big><a class="headerlink" href="#multi.getmedia3.getmedia" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="multi.getmedia3.getn">
+<tt class="descclassname">multi.getmedia3.</tt><tt class="descname">getn</tt><big>(</big><em>ri_str</em><big>)</big><a class="headerlink" href="#multi.getmedia3.getn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-multi.getneff3">
+<span id="multi-getneff3-module"></span><h2>multi.getneff3 module<a class="headerlink" href="#module-multi.getneff3" title="Permalink to this headline">¶</a></h2>
+<p>Effective index calculation for bi-axial in z</p>
+<p>&#64;author: asmuyi</p>
+<dl class="function">
+<dt id="multi.getneff3.getneff">
+<tt class="descclassname">multi.getneff3.</tt><tt class="descname">getneff</tt><big>(</big><em>ri</em>, <em>tn</em>, <em>n</em>, <em>lam</em>, <em>ia</em><big>)</big><a class="headerlink" href="#multi.getneff3.getneff" title="Permalink to this definition">¶</a></dt>
+<dd><p>ri=refractive index, ia=incident angle</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-multi.getz03">
+<span id="multi-getz03-module"></span><h2>multi.getz03 module<a class="headerlink" href="#module-multi.getz03" title="Permalink to this headline">¶</a></h2>
+<p>calculate ncos, y, z of each layer
+media info from getneff
+Created on Wed Jun 11 19:52:13 2014
+Updated on Jul 2014</p>
+<p>&#64;author: asmuyi</p>
+<dl class="function">
+<dt id="multi.getz03.getncos">
+<tt class="descclassname">multi.getz03.</tt><tt class="descname">getncos</tt><big>(</big><em>ri</em>, <em>pol</em>, <em>ia</em>, <em>rin</em><big>)</big><a class="headerlink" href="#multi.getz03.getncos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-multi.tmrefl3">
+<span id="multi-tmrefl3-module"></span><h2>multi.tmrefl3 module<a class="headerlink" href="#module-multi.tmrefl3" title="Permalink to this headline">¶</a></h2>
+<p>tmrefl.py, calculate the reflection coeff using tmm</p>
+<p>&#64;author: asmuyi</p>
+<dl class="function">
+<dt id="multi.tmrefl3.getr">
+<tt class="descclassname">multi.tmrefl3.</tt><tt class="descname">getr</tt><big>(</big><em>ri</em>, <em>tn</em>, <em>n</em>, <em>lam</em>, <em>ia</em>, <em>pol</em><big>)</big><a class="headerlink" href="#multi.tmrefl3.getr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="multi.tmrefl3.getrefl">
+<tt class="descclassname">multi.tmrefl3.</tt><tt class="descname">getrefl</tt><big>(</big><em>ri</em>, <em>tn</em>, <em>n</em>, <em>lam</em>, <em>ia</em>, <em>pol</em><big>)</big><a class="headerlink" href="#multi.tmrefl3.getrefl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="multi.tmrefl3.getreflc">
+<tt class="descclassname">multi.tmrefl3.</tt><tt class="descname">getreflc</tt><big>(</big><em>ri</em>, <em>tn</em>, <em>n</em>, <em>lam</em>, <em>ia</em>, <em>pol</em><big>)</big><a class="headerlink" href="#multi.tmrefl3.getreflc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="multi.tmrefl3.gettran">
+<tt class="descclassname">multi.tmrefl3.</tt><tt class="descname">gettran</tt><big>(</big><em>ri</em>, <em>tn</em>, <em>n</em>, <em>lam</em>, <em>ia</em>, <em>pol</em><big>)</big><a class="headerlink" href="#multi.tmrefl3.gettran" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="multi.tmrefl3.getv">
+<tt class="descclassname">multi.tmrefl3.</tt><tt class="descname">getv</tt><big>(</big><em>ri</em>, <em>tn</em>, <em>n</em>, <em>lam</em>, <em>ia</em>, <em>pol</em><big>)</big><a class="headerlink" href="#multi.tmrefl3.getv" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the v or field value on boundary</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-multi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-multi" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">multi package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-multi.getmedia3">multi.getmedia3 module</a></li>
+<li><a class="reference internal" href="#module-multi.getneff3">multi.getneff3 module</a></li>
+<li><a class="reference internal" href="#module-multi.getz03">multi.getz03 module</a></li>
+<li><a class="reference internal" href="#module-multi.tmrefl3">multi.tmrefl3 module</a></li>
+<li><a class="reference internal" href="#module-multi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/multi.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">MyPyEm 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Josh Yang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
