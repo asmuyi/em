@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-getmedia3.py, obtain the media n and d from stack.dat
-Created on Mon Jun  9 21:34:41 2014
-Revised on Sat Jun 14 2014
+"""Obtain the media n and d from stack.dat
 Add transverse anisotropy on July 1 2014
 
-@author: asmuyi
 """
+
 import numpy as np
 import tools.conunit as cu
 #import getuser as gu

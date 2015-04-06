@@ -2,7 +2,6 @@
 """
 Effective index calculation for bi-axial in z
 
-@author: asmuyi
 """
 
 import numpy as np

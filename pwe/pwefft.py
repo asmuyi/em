@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-@author: asmuyi
-
 Expand mode based on mode profile
 """
 
@@ -10,11 +8,28 @@ import numpy.fft as fft
 import multi.myconst as mc
   
 def getxs(dx,N):
+    """Convert from x-space def. to s-space
+
+    :param dx: space between x-space grid
+    :param N: number of x-space points
+    :return x: x array
+    :return s: s array
+
+    Example ::
+	        
+
+    """
     x=np.arange(0,dx*(N),dx,float) 
     s=2*np.pi*fft.fftshift(fft.fftfreq(N,dx))
     return x,s
     
 def gets(x):
+    """Convert from x-space to s-space
+
+    :param x: x array
+    :returns: s,dx,N 
+
+    """
     N=len(x)    
     dx=np.abs(x[1]-x[0])
     s=2*np.pi*fft.fftshift(fft.fftfreq(N,dx))

@@ -51,11 +51,8 @@
 </div>
 <div class="section" id="module-multi.getmedia3">
 <span id="multi-getmedia3-module"></span><h2>multi.getmedia3 module<a class="headerlink" href="#module-multi.getmedia3" title="Permalink to this headline">¶</a></h2>
-<p>getmedia3.py, obtain the media n and d from stack.dat
-Created on Mon Jun  9 21:34:41 2014
-Revised on Sat Jun 14 2014
+<p>Obtain the media n and d from stack.dat
 Add transverse anisotropy on July 1 2014</p>
-<p>&#64;author: asmuyi</p>
 <dl class="function">
 <dt id="multi.getmedia3.findmdc">
 <tt class="descclassname">multi.getmedia3.</tt><tt class="descname">findmdc</tt><big>(</big><em>media</em><big>)</big><a class="headerlink" href="#multi.getmedia3.findmdc" title="Permalink to this definition">¶</a></dt>
@@ -80,7 +77,6 @@ Add transverse anisotropy on July 1 2014</p>
 <div class="section" id="module-multi.getneff3">
 <span id="multi-getneff3-module"></span><h2>multi.getneff3 module<a class="headerlink" href="#module-multi.getneff3" title="Permalink to this headline">¶</a></h2>
 <p>Effective index calculation for bi-axial in z</p>
-<p>&#64;author: asmuyi</p>
 <dl class="function">
 <dt id="multi.getneff3.getneff">
 <tt class="descclassname">multi.getneff3.</tt><tt class="descname">getneff</tt><big>(</big><em>ri</em>, <em>tn</em>, <em>n</em>, <em>lam</em>, <em>ia</em><big>)</big><a class="headerlink" href="#multi.getneff3.getneff" title="Permalink to this definition">¶</a></dt>
@@ -90,25 +86,62 @@ Add transverse anisotropy on July 1 2014</p>
 </div>
 <div class="section" id="module-multi.getz03">
 <span id="multi-getz03-module"></span><h2>multi.getz03 module<a class="headerlink" href="#module-multi.getz03" title="Permalink to this headline">¶</a></h2>
-<p>calculate ncos, y, z of each layer
-media info from getneff
-Created on Wed Jun 11 19:52:13 2014
-Updated on Jul 2014</p>
-<p>&#64;author: asmuyi</p>
+<p>Calculate ncos, y, z of each layer.
+Media info from getneff3.</p>
 <dl class="function">
 <dt id="multi.getz03.getncos">
 <tt class="descclassname">multi.getz03.</tt><tt class="descname">getncos</tt><big>(</big><em>ri</em>, <em>pol</em>, <em>ia</em>, <em>rin</em><big>)</big><a class="headerlink" href="#multi.getz03.getncos" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Obtain index*cos(beam_angle) and return impedance of each layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ri</strong> (<em>complex</em>) &#8211; refractive index</li>
+<li><strong>pol</strong> (<em>str</em>) &#8211; Polarization</li>
+<li><strong>ia</strong> (<em>float in deg</em>) &#8211; incident angle</li>
+<li><strong>rin</strong> (<em>complex</em>) &#8211; refractive index of input material</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ncos, impedance (z) and admittance (y)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </div>
 <div class="section" id="module-multi.tmrefl3">
 <span id="multi-tmrefl3-module"></span><h2>multi.tmrefl3 module<a class="headerlink" href="#module-multi.tmrefl3" title="Permalink to this headline">¶</a></h2>
-<p>tmrefl.py, calculate the reflection coeff using tmm</p>
-<p>&#64;author: asmuyi</p>
+<p>Calculate the reflection coeff using TMM theory</p>
 <dl class="function">
 <dt id="multi.tmrefl3.getr">
 <tt class="descclassname">multi.tmrefl3.</tt><tt class="descname">getr</tt><big>(</big><em>ri</em>, <em>tn</em>, <em>n</em>, <em>lam</em>, <em>ia</em>, <em>pol</em><big>)</big><a class="headerlink" href="#multi.tmrefl3.getr" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get reflection.</p>
+<p>It takes the effective index (possibly anisotropic) from getneff3,
+such as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rin</span><span class="p">,</span><span class="n">neff</span> <span class="o">=</span> <span class="n">getneff3</span><span class="o">.</span><span class="n">getneff</span><span class="p">(</span><span class="n">ri</span><span class="p">,</span><span class="n">tn</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="n">ia</span><span class="p">)</span> 
+<span class="n">r</span><span class="p">,</span><span class="n">rr</span><span class="p">,</span><span class="n">fi</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="n">getr</span><span class="p">(</span><span class="n">ri</span><span class="p">,</span><span class="n">tn</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="n">ia</span><span class="p">,</span><span class="n">pol</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ri</strong> &#8211; refractive index in complex</li>
+<li><strong>tn</strong> &#8211; thickness in m</li>
+<li><strong>n</strong> &#8211; layer number in int</li>
+<li><strong>lam</strong> &#8211; wavelength in m</li>
+<li><strong>ia</strong> &#8211; incident angle in deg</li>
+<li><strong>pol</strong> &#8211; polarization in str</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="function">
 <dt id="multi.tmrefl3.getrefl">

@@ -3,6 +3,11 @@ mdc air
 1.0 1.0 1.0
 inf 1um inf
 
+mdc evc-lu
+1um
+2.0 1.0 2.0
+inf 0.5um inf
+
 mdc ml-lu
 1000nm
 1.0 1.5 2.5 1.5
@@ -22,3 +27,8 @@ mdc ani1
 1um
 1 (1.5)(1.5)(1) 1
 inf 2um inf
+
+mdc astc
+800nm
+1.0 1.6 1 1.6 (2.9,1.5) 1.7 (0.26,5.28) 1.5
+inf 1.5nm 2.5nm 2.5nm 10nm 15nm 80nm inf

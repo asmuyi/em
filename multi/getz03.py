@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-calculate ncos, y, z of each layer
-media info from getneff
-Created on Wed Jun 11 19:52:13 2014
-Updated on Jul 2014
+Calculate ncos, y, z of each layer.
+Media info from getneff3.
 
-@author: asmuyi 
 """
 import numpy as np
 import tools.myconst as mc
@@ -14,6 +11,19 @@ import getmedia3 as gm3
 from tools.myconst import eps0,mu0,c0
 
 def getncos(ri,pol,ia,rin):
+    """ Obtain index*cos(beam_angle) and return impedance of each layer.
+
+    :param ri: refractive index
+    :type ri: complex 
+    :param pol: Polarization
+    :type pol: str
+    :param ia: incident angle
+    :type ia: float in deg
+    :param rin: refractive index of input material
+    :type rin: complex
+    :return: ncos, impedance (z) and admittance (y)
+    
+    """
     neff = rin * np.sin(ia/180.0*np.pi)
     if ri[0]==ri[2]:
         print 'isotropic'
@@ -48,3 +58,5 @@ def getncos(ri,pol,ia,rin):
 #    print ncos
     return ncos,y,z
     
+    if __name__ == "__main__":
+        print "Running getz03"

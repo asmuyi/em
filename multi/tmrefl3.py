@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-tmrefl.py, calculate the reflection coeff using tmm
+"""Calculate the reflection coeff using TMM theory
 
-@author: asmuyi
 """
 
 import numpy as np
@@ -12,6 +10,24 @@ import getz03 as gz3
 
 
 def getr(ri,tn,n,lam,ia,pol):
+    """ Get reflection.
+
+    Example
+    -------
+    It takes the effective index (possibly anisotropic) from getneff3,
+    such as::
+
+        rin,neff = getneff3.getneff(ri,tn,n,lam,ia) 
+        r,rr,fi,z=getr(ri,tn,n,lam,ia,pol)
+    
+    :param ri: refractive index in complex
+    :param tn: thickness in m
+    :param n: layer number in int
+    :param lam: wavelength in m
+    :param ia: incident angle in deg
+    :param pol: polarization in str
+
+    """
     rin,neff=gn3.getneff(ri,tn,n,lam,ia)
     print rin,neff
     k=2*np.pi/lam
