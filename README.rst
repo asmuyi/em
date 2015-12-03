@@ -5,8 +5,10 @@ EM
 This package collects:
 
   * A transfer matrix or transmission line routine for multilayer
-  reflection, transmission and absorption.
+    reflection, transmission and absorption.
+
   * A 2D plane-wave expansion routine.
+
   * Small tools for parametric sweep generation.
 
 Setup
