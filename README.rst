@@ -3,10 +3,11 @@ EM
 ###
 
 This package collects:
-  1. A transfer matrix or transmission line routine for multilayer
+
+  * A transfer matrix or transmission line routine for multilayer
   reflection, transmission and absorption.
-  2. A 2D plane-wave expansion routine.
-  3. Small tools for parametric sweep generation.
+  * A 2D plane-wave expansion routine.
+  * Small tools for parametric sweep generation.
 
 Setup
 =====
@@ -17,6 +18,7 @@ Testing
 =======
 
 Run some simple test as::
+
     python planewave.py
 
 Contact
