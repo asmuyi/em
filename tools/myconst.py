@@ -4,7 +4,6 @@
 from __future__ import absolute_import
 
 import numpy as np
-from . import myconst
 
 eps0=8.854187817e-12
 mu0=4*np.pi*1e-7
