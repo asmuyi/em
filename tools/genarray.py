@@ -1,10 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Generate a list from string input that might include unit such as um.
+"""Generate a list from string input that might include unit such as um.
+
 """
 
+from __future__ import absolute_import
+
 import numpy as np
-import conunit as cu
+import .conunit as cu
 
 def getarray(str_array):
     """Get number array or list from string.
@@ -16,9 +17,11 @@ def getarray(str_array):
     Example::
 
       getarray('2:2:8')
+    will generate a list of [2,4,6,8]
     or::
 
       getarray('2um:2um:8um')
+
     """
     if ':' in str_array:
         s=str_array.split(':')

@@ -1,18 +1,20 @@
 # -*- coding: utf-8 -*-
-"""
-Convert string with unit to number.
+"""Convert string with unit to number.
+
 """
 
+from __future__ import absolute_import
+
 import numpy as np
-import myconst as mc
-from myconst import m,nm,um
+from . import myconst as mc
+#from .myconst import m,nm,um
 
 def convlen(length):
     """Convert length ended with unit
 
     :param length: length in string
     :type length: str
-    :returns: length in floating num
+    :return: length in floating num
     :rtype: float
     
     Examples::
@@ -20,7 +22,7 @@ def convlen(length):
 	convlen('2um')
 
     """
-    for unit in ['nm','um'] :
+    for unit in ['m','nm','um'] :
         if unit in length:
             s=length.split(unit)
             if unit=='nm':
