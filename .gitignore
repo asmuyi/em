@@ -1,7 +1,7 @@
 # Compiled src #
 *.a
 *.o
-*.py
+*.pyc
 *.so
 *.class
 *.com
