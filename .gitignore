@@ -1,0 +1,14 @@
+# Compiled src #
+*.a
+*.o
+*.py
+*.so
+*.class
+*.com
+
+# OS #
+.DS_Store*
+Thumbs.db
+
+# Build #
+
