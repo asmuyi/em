@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Convert string with unit to number.
 
 """

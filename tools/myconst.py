@@ -16,4 +16,4 @@ dm=1e-1
 m=1
 
 if __name__ == "__main__":
-    print "Test: light speed is 299792458!!!"
+    print "Test...: we find light speed is 299792458!!!"

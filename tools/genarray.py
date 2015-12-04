@@ -28,6 +28,10 @@ def getarray(str_array):
 
       getarray("2 4 6 8")
 
+    or::
+    
+      getarray("2um 4um 6um 8um")
+
     """
     if ':' in str_array:
         s=str_array.split(':')
