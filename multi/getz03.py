@@ -6,7 +6,7 @@ from __future__ import absolute_import
 
 import sys
 import numpy as np
-import tools.myconst as mc
+from tools import myconst as mc
 
 def getncos(ri,pol,ia,rin):
     """ Obtain index*cos(beam_angle) and return impedance of each layer.
@@ -79,5 +79,8 @@ def getzin(rin,pol,ia):
     return 1./y
 
 if __name__ == "__main__":
-    print "The impedance of the first layer is\n"
-    print getzin(sys.argv[1],sys.argv[2],str(sys.argv[3]))/mc.z0
+    print "The impedance of the first layer is:"
+    print "================"
+    print getzin(float(sys.argv[1]),str(sys.argv[2]),
+	float(sys.argv[3]))/mc.z0
+

@@ -8,6 +8,7 @@ import numpy as np
 eps0=8.854187817e-12
 mu0=4*np.pi*1e-7
 c0=299792458
+z0=1/eps0/c0
 nm=1e-9
 um=1e-6
 mm=1e-3

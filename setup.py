@@ -20,7 +20,7 @@ def update_path():
 	    subprocess.check_output(["echo","%PYTHONPATH%"],shell=True)
 	    print sys.path
 	else:
-	    sys.path.insert(0,current_path)m
+	    sys.path.insert(0,current_path)
 
 	setup(
 		name = "EM package",

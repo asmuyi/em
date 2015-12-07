@@ -36,7 +36,7 @@ def getarray(str_array):
     if ':' in str_array:
         s=str_array.split(':')
         if 'm' in s[0]:
-            s2=[cu.convlen(x) for x in s]
+           s2=[cu.convlen(x) for x in s]
         else: 
             s2=[float(x) for x in s]
         ns=round((s2[2]-s2[0])/s2[1])+1
