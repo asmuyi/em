@@ -1,0 +1,54 @@
+mdc air
+1000nm
+1.0 1.0 1.0
+inf 1um inf
+
+mdc ml-lu
+1000nm
+1.0 1.5 2.5 1.5
+inf 2.5um 2.5um inf
+
+mdc sp-lu
+500nm
+1.46 (0.106,2.928) 1
+inf 50nm inf
+
+mdc astc1m
+830nm
+1 1.6 (2.9,1.5) 1.7 (0.251,5.066) 1.5
+inf 2.5nm 10nm 15nm 80nm inf
+
+mdc astc1h
+830nm
+2.0 1.6 1 1.6 (2.9,1.5) 1.7 (0.251,5.066) 1.5
+inf 2.5nm 2.5nm 2.5nm 10nm 15nm 80nm inf
+
+mdc astc2m
+830nm
+1 1.6 (2.9,1.5) 1.7 (0.26,5.28) 1.5
+inf 2.5nm 10nm 15nm 80nm inf
+
+mdc astc2h
+830nm
+2.0 1.6 1 1.6 (2.9,1.5) 1.7 (0.26,5.28) 1.5
+inf 1.5nm 2.5nm 2.5nm 10nm 15nm 80nm inf
+
+mdc astcILm
+800nm
+1 1.2 (2.9,1.5) (1.7,0.0) (0.26,5.28) 1.5
+inf 2.5nm 10.0nm 15.0nm 80.0nm inf
+
+mdc astcILh
+800nm
+1.0 1.6 1.0 1.2 (2.9,1.5) (1.7,0.0) (0.26,5.28) 1.5
+inf 2.5nm 2.5nm 2.5nm 10.0nm 15.0nm 80.0nm inf
+
+mdc goos
+860nm
+1.0 (0.17,5.29) 1.5 1.85 1 (0.17,5.29) 1.5
+inf 29nm 0.2mm 1.5um 0.6mm 300nm inf
+
+mdc narrowref
+860nm
+1.0 (0.17,5.29) 1.5 (0.17,5.29) 1.5
+inf 29nm 8um 300nm inf
