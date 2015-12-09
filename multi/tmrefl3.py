@@ -1,11 +1,13 @@
-# -*- coding: utf-8 -*-
 """Calculate the reflection coeff using TMM theory
 
 """
 
+from __future__ import absolute_import
+
+import sys
 import numpy as np
 import getneff3 as gn3
-import tools.myconst as mc
+import tools import myconst as mc
 import getz03 as gz3
 
 
@@ -29,9 +31,8 @@ def getr(ri,tn,n,lam,ia,pol):
 
     """
     rin,neff=gn3.getneff(ri,tn,n,lam,ia)
-    print rin,neff
     k=2*np.pi/lam
-    ncos,y,z,zl,rr,r,fi=(np.zeros(n,np.complex) for _ in xrange(7)) 
+    ncos,y,z,zl,rr,r,heat,fi=(np.zeros(n,np.complex) for _ in xrange(8)) 
     """ zl is impedance on the left boundary
     rr is refl coeff on the right boundary
     """
@@ -45,16 +46,17 @@ def getr(ri,tn,n,lam,ia,pol):
             r[-ind-1]=0
             zl[-ind-1]=z[-ind-1]
         else:
-            rr[-ind-1]=(zl[-ind]-z[-ind-1])/(zl[-ind]+z[-ind-1])
-            r[-ind-1]=rr[-ind-1]*np.exp(-1j*2*fi[-ind-1])
-            zl[-ind-1]=z[-ind-1]*(zl[-ind]*np.cos(fi[-ind-1])+1j*z[-ind-1]*np.sin(fi[-ind-1])) \
-                        /(z[-ind-1]*np.cos(fi[-ind-1])+1j*zl[-ind]*np.sin(fi[-ind-1]))
+            rr[-ind-1] = (zl[-ind]-z[-ind-1])/(zl[-ind]+z[-ind-1])
+            r[-ind-1] = rr[-ind-1]*np.exp(-1j*2*fi[-ind-1])
+            zl[-ind-1] = z[-ind-1]*(zl[-ind]*np.cos(fi[-ind-1])+ \
+                            1j*z[-ind-1]*np.sin(fi[-ind-1])) \
+                            /(z[-ind-1]*np.cos(fi[-ind-1])+ \
+                            1j*zl[-ind]*np.sin(fi[-ind-1]))
     return r,rr,fi,z
     
 def getrefl(ri,tn,n,lam,ia,pol):
     r,rr,fi,z=getr(ri,tn,n,lam,ia,pol)
     return np.absolute(rr[0])**2
-#    return rr[0]
     
 def getreflc(ri,tn,n,lam,ia,pol):
     r,rr,fi,z=getr(ri,tn,n,lam,ia,pol)
@@ -63,7 +65,7 @@ def getreflc(ri,tn,n,lam,ia,pol):
 def getv(ri,tn,n,lam,ia,pol):
     """ get the v or field value on boundary"""
     r,rr,fi,z=getr(ri,tn,n,lam,ia,pol)
-    v,vin = ((np.zeros(len(r),np.complex)) for _ in xrange(2))
+    v,vin,u1,i1,u2,i2,heat = ((np.zeros(len(r),np.complex)) for _ in xrange(7))
     vin[0]=1.0
     for ind in xrange(len(r)):
         v[ind]=vin[ind]*(1+rr[ind])*np.exp(-1j*fi[ind])
@@ -71,11 +73,33 @@ def getv(ri,tn,n,lam,ia,pol):
             break            
         else:
             vin[ind+1]=v[ind]/(1+r[ind+1])
-    tran=np.absolute(vin[-1])**2/np.absolute(vin[0])**2/np.conj(z[-1])*np.conj(z[0])
-    return tran,vin,v,z
+    tran=np.absolute(vin[-1])**2/np.absolute(vin[0])**2/ \
+            np.conj(z[-1])*np.conj(z[0])
+    for ind in xrange(n):
+        u1[ind] = vin[ind]*(1+r[ind])
+        u2[ind] = v[ind]
+        i1[ind] = vin[ind]*(1-r[ind])/z[ind]
+        i2[ind] = v[ind]/(1+rr[ind])*(1-rr[ind])/z[ind]
+    for ind in xrange(n):
+        if ind == n-1:
+            heat[ind] = 0
+            break
+        else:
+            heat[ind] = (np.real(u1[ind]*np.conj(i1[ind])) - \
+                        np.real(u2[ind]*np.conj(i2[ind]))) \
+                            /np.real(vin[0]*np.conj(vin[0]/z[0]))
+    return tran,vin,v,z,heat
     
 def gettran(ri,tn,n,lam,ia,pol):
-    tran,vin,v,z=getv(ri,tn,n,lam,ia,pol)
+    tran,vin,v,z,heat=getv(ri,tn,n,lam,ia,pol)
     return tran
     
+def getheat(ri,tn,n,lam,ia,pol):
+    tran,vin,v,z,heat=getv(ri,tn,n,lam,ia,pol)
+    return np.sum(heat)
 
+def getheatn(ri,tn,n,lam,ia,pol,heatn):
+    tran,vin,v,z,heat = getv(ri,tn,n,lam,ia,pol)
+    return heat[heatn]
+
+#TODO __name__
