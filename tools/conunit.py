@@ -6,7 +6,7 @@ from __future__ import absolute_import
 
 import sys
 import numpy as np
-import myconst as mc
+from tools import myconst as mc
 #from .myconst import m,nm,um
 
 def convlen(length):
