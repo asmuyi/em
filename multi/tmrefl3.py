@@ -7,7 +7,7 @@ from __future__ import absolute_import
 import sys
 import numpy as np
 import getneff3 as gn3
-import tools import myconst as mc
+from tools import myconst as mc
 import getz03 as gz3
 
 
