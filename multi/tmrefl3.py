@@ -6,10 +6,17 @@ from __future__ import absolute_import
 
 import sys
 import numpy as np
-import getneff3 as gn3
 from tools import myconst as mc
+from tools import getmedia3 as gm3
 import getz03 as gz3
 
+def getneff(ri,tn,n,lam,ia):
+    """ Get effective index. ri needs to be tensor style.
+    
+    """
+    rin=ri[0][0]
+    neff = rin * np.sin(ia/180.*np.pi)
+    return rin,neff
 
 def getr(ri,tn,n,lam,ia,pol):
     """ Get reflection.
@@ -19,7 +26,7 @@ def getr(ri,tn,n,lam,ia,pol):
     It takes the effective index (possibly anisotropic) from getneff3,
     such as::
 
-        rin,neff = getneff3.getneff(ri,tn,n,lam,ia) 
+        rin,neff = getneff(ri,tn,n,lam,ia) 
         r,rr,fi,z=getr(ri,tn,n,lam,ia,pol)
     
     :param ri: refractive index in complex
@@ -30,7 +37,7 @@ def getr(ri,tn,n,lam,ia,pol):
     :param pol: polarization in str
 
     """
-    rin,neff=gn3.getneff(ri,tn,n,lam,ia)
+    rin,neff=getneff(ri,tn,n,lam,ia)
     k=2*np.pi/lam
     ncos,y,z,zl,rr,r,heat,fi=(np.zeros(n,np.complex) for _ in xrange(8)) 
     """ zl is impedance on the left boundary
@@ -80,7 +87,7 @@ def getv(ri,tn,n,lam,ia,pol):
         u2[ind] = v[ind]
         i1[ind] = vin[ind]*(1-r[ind])/z[ind]
         i2[ind] = v[ind]/(1+rr[ind])*(1-rr[ind])/z[ind]
-    for ind in xrange(n):
+    for ind in xrannge(n):
         if ind == n-1:
             heat[ind] = 0
             break
@@ -102,4 +109,6 @@ def getheatn(ri,tn,n,lam,ia,pol,heatn):
     tran,vin,v,z,heat = getv(ri,tn,n,lam,ia,pol)
     return heat[heatn]
 
-#TODO __name__
+if __name__ == "__main__":
+    ri,tn,n,lam = gm3.getmedia(str(sys.argv[1]),str(sys.argv[2]))
+    print getrefl(ri,tn,n,lam,45,"TE")

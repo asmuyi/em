@@ -6,7 +6,7 @@ from __future__ import absolute_import
 
 import numpy as np
 import sys
-import conunit as cu
+from tools import conunit as cu
 
 def getarray(str_array):
     """Get number array or list from string.
