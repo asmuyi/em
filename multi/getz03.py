@@ -69,7 +69,11 @@ def getzin(rin,pol,ia):
     :param ia: incident angle
     :type ia: float in deg
     :return: impedance (z) 
-    
+    Example::
+        
+        getzin(2,'TE',45)
+    will get the tangential impedance that will be conserved across multilayer. 
+
     """
     neff = rin * np.sin(ia/180.0*np.pi)
     ncos2=rin**2-neff**2
