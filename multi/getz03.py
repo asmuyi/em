@@ -20,6 +20,11 @@ def getncos(ri,pol,ia,rin):
     :param rin: refractive index of input material
     :type rin: complex
     :return: ncos, impedance (z) and admittance (y)
+    Example::
+
+        getncos(2.00,'TE',45,1.4)
+    will return ncos, the impedance and admittance inside n=2.00 material, 
+    given by a 'TE' incident light at 45 deg, from n=1.4 material.
     
     """
     neff = rin * np.sin(ia/180.0*np.pi)

@@ -89,7 +89,17 @@ def getd(tn_str,lam_str):
             tn_float[ind]=cu.convlen(tn_arr[ind])
     return tn_float,lam
             
-def getmedia(mediatable,medianame):
+def getmedia3(mediatable,medianame):
+    """ Get the media refractive index, thickness, nlayer and wavelength.
+    
+    :param mediatable: media stack library "stack.dat" in string
+    :param medianame: media name from stack.dat in string
+    Example::
+
+        getmedia3('stack.dat','sp-lu')
+    will return the index and thickness in array with length of layer num.
+
+    """
     if 'user' not in medianame:
         ri_str,tn_str,lam_str=findmdc(mediatable,medianame)
         ri=getn(ri_str)
@@ -109,28 +119,28 @@ def getindex(mediatable,medianame):
     """Get index of multilayer.
     
     """
-    media=getmedia(mediatable,medianame)
+    media=getmedia3(mediatable,medianame)
     return media[0]
 
 def getthickness(mediatable,medianame):
     """Get thickness of multilayer.
     
     """
-    media=getmedia(mediatable,medianame)
+    media=getmedia3(mediatable,medianame)
     return media[1]
 
 def getnlayer(mediatable,medianame):
     """Get layer number  of multilayer.
     
     """
-    media=getmedia(mediatable,medianame)
+    media=getmedia3(mediatable,medianame)
     return media[2]
 
 def getwavelength(mediatable,medianame):
     """Get wavelength (single value).
     
     """
-    media=getmedia(mediatable,medianame)
+    media=getmedia3(mediatable,medianame)
     return media[3]
 
 if __name__ == "__main__":
